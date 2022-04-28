@@ -7,8 +7,6 @@ limit = int(input())
 s = [0]
 s.extend(list(itertools.accumulate(train)))
 
-print(s)
-
 d = [[0] * (n + 1) for _ in range(4)]
 
 for i in range(1, 4):
