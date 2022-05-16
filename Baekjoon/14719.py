@@ -1,6 +1,3 @@
-from operator import le
-
-
 h, w = map(int, input().split())
 array = list(map(int, input().split()))
 rain = 0
