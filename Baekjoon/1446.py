@@ -9,7 +9,6 @@ roads.sort(key=lambda x:(x[0], x[1], x[2]))
 
 for road in roads:
     s, e, w = road
-    print(s, e, w)
     if e <= d:
         dp[e] = min(dp[s] + w, dp[e])
     for j in range(s, d + 1):
