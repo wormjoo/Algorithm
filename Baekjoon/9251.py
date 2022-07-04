@@ -1,8 +1,6 @@
-# indexerror 다시 풀기
 first = input()
 second = input()
-array = [[0] * (len(first)+1) for _ in range(len(second)+1)]
-print(array)
+array = [[0] * (len(second)+1) for _ in range(len(first)+1)] # 리스트 초기화 제대로 할 것!
 
 for i in range(1, len(first)+1):
     for j in range(1, len(second)+1):
