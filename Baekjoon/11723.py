@@ -1,24 +1,25 @@
-INF = 1e9
+import sys
 
-n = int(input())
-graph = [[INF] * n for _ in range(n)]
-result = [[0] * n for _ in range(n)]
+m = int(sys.stdin.readline())
+s = set()
 
-for i in range(n):
-    array = list(map(int, input().split()))
-    for j in range(n):
-        if array[j] == 1:
-            graph[i][j] = 1
-
-for k in range(n):
-    for a in range(n):
-        for b in range(n):
-            graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
-
-for i in range(n):
-    for j in range(n):
-        if graph[i][j] != INF:
-            result[i][j] = 1
-
-for i in range(n):
-    print(*result[i])
+for _ in range(m):
+    command = sys.stdin.readline().strip().split()
+    c = command[0]
+    if len(command) == 2:
+        x = int(command[1])
+    if c == "add":
+        s.add(x)
+    elif c == "remove":
+        s.discard(x)
+    elif c == "check":
+        print(1 if x in s else 0)
+    elif c == "toggle":
+        if x in s:
+            s.discard(x)
+        else:
+            s.add(x)
+    elif c == "all":
+        s = set([i for i in range(1, 21)])
+    elif c == "empty":
+        s = set()
