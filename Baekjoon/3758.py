@@ -15,7 +15,6 @@ for _ in range(T):
         ranking.append([i, sum(information[i]), len(order[i]), max(order[i])])
     
     ranking.sort(key=lambda x:(-x[1], x[2], x[3]))
-    print(ranking)
 
     for i in range(n):
         if ranking[i][0] == t:
